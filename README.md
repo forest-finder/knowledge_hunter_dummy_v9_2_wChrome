@@ -26,6 +26,26 @@ A powerful Chrome extension for capturing, organizing, and retrieving knowledge 
 4. Click "Load unpacked" and select the extension directory
 5. The Knowledge Hunter extension should now be installed and visible in your toolbar
 
+## Environment Variables and API Keys
+
+This project uses environment variables to securely manage API keys and sensitive information. To set up the environment:
+
+1. Copy the template file:
+   ```
+   cp assets/.env.example assets/.env
+   ```
+
+2. Edit the `.env` file and add your actual API keys:
+   ```
+   STRIPE_SECRET_ID=your_actual_key_here
+   STRIPE_PUBLISHED_KEY=your_actual_key_here
+   ...
+   ```
+
+3. **IMPORTANT**: Never commit your `.env` file to version control. It's already added to `.gitignore` to prevent accidental commits.
+
+4. For Firebase configuration, the API keys are loaded from environment variables. Make sure to add your Firebase API keys to the `.env` file.
+
 ## Usage
 
 ### Capturing Content
@@ -112,8 +132,19 @@ knowledge_hunter_chrome/
 ### Building from Source
 
 1. Clone the repository
-2. Make your changes
-3. Load the extension in developer mode as described in the installation section
+2. Set up environment variables as described above
+3. Make your changes
+4. Load the extension in developer mode as described in the installation section
+
+## Security Best Practices
+
+This project follows these security best practices:
+
+1. **Environment Variables**: All API keys and secrets are stored in environment variables, not in the code.
+2. **Gitignore**: Sensitive files are excluded from version control via `.gitignore`.
+3. **Template Files**: We provide `.env.example` as a template without real credentials.
+4. **Configuration Classes**: We use dedicated configuration classes to access environment variables.
+5. **No Hardcoded Secrets**: We never hardcode API keys or secrets in the source code.
 
 ## Contributing
 
