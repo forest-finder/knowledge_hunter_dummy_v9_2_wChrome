@@ -1,0 +1,229 @@
+/* Knowledge Hunter Chrome Extension Styles */
+
+:root {
+  --primary-color: #4285F4;
+  --secondary-color: #34A853;
+  --accent-color: #FBBC05;
+  --text-color: #333333;
+  --light-text: #757575;
+  --background-color: #FFFFFF;
+  --light-background: #F5F5F5;
+  --border-color: #E0E0E0;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --success-color: #34A853;
+  --error-color: #EA4335;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+.container {
+  width: 350px;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Styles */
+header {
+  padding: 16px;
+  background-color: var(--primary-color);
+  color: white;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+}
+
+.logo h1 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Main Content Styles */
+main {
+  flex: 1;
+  padding: 16px;
+  background-color: var(--background-color);
+}
+
+.search-section {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+#search-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px 0 0 4px;
+  font-size: 14px;
+}
+
+#search-button {
+  padding: 8px 16px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.actions-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.action-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  background-color: var(--light-background);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  cursor: pointer;
+  width: 30%;
+  transition: all 0.2s ease;
+}
+
+.action-button:hover {
+  background-color: var(--border-color);
+}
+
+.action-button .icon {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.action-button .label {
+  font-size: 12px;
+  text-align: center;
+}
+
+.recent-captures {
+  margin-top: 20px;
+}
+
+.recent-captures h2 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: var(--text-color);
+}
+
+.captures-list {
+  background-color: var(--light-background);
+  border-radius: 8px;
+  padding: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 20px;
+  color: var(--light-text);
+  font-style: italic;
+}
+
+.capture-item {
+  padding: 10px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+}
+
+.capture-item:last-child {
+  border-bottom: none;
+}
+
+.capture-item .title {
+  flex: 1;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.capture-item .source {
+  font-size: 12px;
+  color: var(--light-text);
+}
+
+.capture-item .date {
+  font-size: 11px;
+  color: var(--light-text);
+}
+
+/* Footer Styles */
+footer {
+  padding: 12px 16px;
+  background-color: var(--light-background);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#settings-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--light-text);
+  font-size: 14px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+#user-name {
+  margin-right: 10px;
+  font-size: 12px;
+  color: var(--light-text);
+}
+
+#sign-in-button {
+  padding: 6px 12px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 400px) {
+  .container {
+    width: 100%;
+  }
+  
+  .actions-section {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .action-button {
+    width: 100%;
+  }
+}
