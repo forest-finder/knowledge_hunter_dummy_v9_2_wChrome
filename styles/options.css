@@ -1,0 +1,287 @@
+/* Knowledge Hunter Chrome Extension - Options Page Styles */
+
+:root {
+  --primary-color: #4285F4;
+  --secondary-color: #34A853;
+  --accent-color: #FBBC05;
+  --text-color: #333333;
+  --light-text: #757575;
+  --background-color: #FFFFFF;
+  --light-background: #F5F5F5;
+  --border-color: #E0E0E0;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --success-color: #34A853;
+  --error-color: #EA4335;
+  --danger-color: #EA4335;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: var(--text-color);
+  background-color: var(--light-background);
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header Styles */
+header {
+  padding: 20px 0;
+  margin-bottom: 30px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+}
+
+.logo h1 {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+/* Main Content Styles */
+main {
+  background-color: var(--background-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px var(--shadow-color);
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.settings-section {
+  padding: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.settings-section:last-child {
+  border-bottom: none;
+}
+
+.settings-section h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.setting-item:last-child {
+  border-bottom: none;
+}
+
+.setting-label {
+  flex: 1;
+}
+
+.setting-label label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.setting-description {
+  font-size: 12px;
+  color: var(--light-text);
+}
+
+.setting-control {
+  margin-left: 20px;
+}
+
+/* Switch Toggle Styles */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: var(--primary-color);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--primary-color);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 24px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Select Styles */
+select {
+  padding: 8px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background-color: white;
+  min-width: 200px;
+  font-size: 14px;
+}
+
+/* Account Section Styles */
+.account-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+#user-info {
+  font-size: 14px;
+}
+
+.buttons-group {
+  display: flex;
+  gap: 10px;
+}
+
+/* Button Styles */
+button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.primary-button {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.primary-button:hover {
+  background-color: #3367d6;
+}
+
+.secondary-button {
+  background-color: var(--light-background);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+}
+
+.secondary-button:hover {
+  background-color: var(--border-color);
+}
+
+.danger-button {
+  background-color: white;
+  border: 1px solid var(--danger-color);
+  color: var(--danger-color);
+}
+
+.danger-button:hover {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+/* Footer Styles */
+footer {
+  padding: 20px 0;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .setting-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .setting-control {
+    margin-left: 0;
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  select {
+    width: 100%;
+  }
+  
+  .account-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  #sign-in-button {
+    margin-top: 10px;
+  }
+  
+  .buttons-container {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .buttons-container button {
+    width: 100%;
+  }
+}
